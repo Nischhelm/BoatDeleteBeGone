@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "boatdeletebegone.mixin",
+  "refmap": "mixins.boatdeletebegone.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "MixinChunk"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}
