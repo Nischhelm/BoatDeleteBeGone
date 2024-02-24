@@ -42,7 +42,10 @@ public abstract class MixinChunk implements ICapabilityProvider {
         this.hasEntities = true;
         int i = MathHelper.floor(entity.posX / 16.0);
         int j = MathHelper.floor(entity.posZ / 16.0);
+        
+        //The following line is the only thing that is changed by this mod
         if (Math.abs(entity.posX - (this.x * 16+8)) > 8.6 || Math.abs(entity.posZ - (this.z * 16+8)) > 8.6) {
+        
             LOGGER.warn("xxx Wrong location! ({}, {}) should be ({}, {}), {}", i, j, this.x, this.z, entity);
             entity.setDead();
         }
