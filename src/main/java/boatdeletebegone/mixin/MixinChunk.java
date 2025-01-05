@@ -29,12 +29,15 @@ public abstract class MixinChunk implements ICapabilityProvider {
         int i = MathHelper.floor(entity.posX / 16.0);
         int j = MathHelper.floor(entity.posZ / 16.0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         
         //The following line is the only thing that is changed by this mod
         if (Math.abs(entity.posX - (this.x * 16+8)) > 8.6 || Math.abs(entity.posZ - (this.z * 16+8)) > 8.6) {
         
             LOGGER.warn("xxx Wrong location! ({}, {}) should be ({}, {}), {}", i, j, this.x, this.z, entity);
 =======
+=======
+>>>>>>> Stashed changes
 
         NBTTagCompound entityData = entity.getEntityData();
         boolean hasValidVehicle = false;
@@ -48,6 +51,9 @@ public abstract class MixinChunk implements ICapabilityProvider {
         }
         if(!hasValidVehicle){
             LOGGER.warn("Wrong location! ({}, {}) should be ({}, {}), {}", i, j, this.x, this.z, entity);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             entity.setDead();
         }
