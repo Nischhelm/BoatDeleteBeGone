@@ -2,8 +2,6 @@
 **/build/
 !src/**/build/
 
-Rlcraft_Restart.jar
-
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -26,5 +24,3 @@ gradle-app.setting
 !src/**/libs/
 **/out/
 !src/**/out/
-
-**/server/

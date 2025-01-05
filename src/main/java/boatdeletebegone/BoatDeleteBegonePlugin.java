@@ -1,20 +1,16 @@
-package boatdeletebegone.mixin;
+package boatdeletebegone;
 
 import java.util.Map;
-
+import fermiumbooter.FermiumRegistryAPI;
 import org.spongepowered.asm.launch.MixinBootstrap;
-import org.spongepowered.asm.mixin.Mixins;
-
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-@IFMLLoadingPlugin.SortingIndex(-5000)
-public class MixinLoader implements IFMLLoadingPlugin
-{
-	public MixinLoader()
-	{
+public class BoatDeleteBegonePlugin implements IFMLLoadingPlugin {
+
+	public BoatDeleteBegonePlugin() {
 		MixinBootstrap.init();
-		Mixins.addConfiguration("mixins.boatdeletebegone.json");
+		FermiumRegistryAPI.enqueueMixin(false, "mixins.boatdeletebegone.json");
 	}
 
 	@Override
@@ -36,10 +32,7 @@ public class MixinLoader implements IFMLLoadingPlugin
 	}
 	
 	@Override
-	public void injectData(Map<String, Object> data)
-	{
-		
-	}
+	public void injectData(Map<String, Object> data) { }
 	
 	@Override
 	public String getAccessTransformerClass()
