@@ -17,7 +17,6 @@ public class boatdeletebegone
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        //MinecraftForge.EVENT_BUS.register(MixinFurnaceEvents.class);
     }
 
 }
