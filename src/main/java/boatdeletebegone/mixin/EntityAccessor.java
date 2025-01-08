@@ -7,6 +7,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(Entity.class)
 public interface EntityAccessor {
-    @Accessor("customEntityData")
+    @Accessor(value = "customEntityData", remap = false)
     void setCustomEntityData(NBTTagCompound compound);
 }

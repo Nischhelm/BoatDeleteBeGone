@@ -67,6 +67,7 @@ public abstract class AnvilChunkLoaderMixin {
             at = @At("RETURN")
     )
     private static Entity removeVehicleNBT(Entity entity) {
+        if(entity == null) return null;
         //Delete vehicle NBT at end of recursive function (inside out, so highest passenger first, lowest vehicle last)
         if(entity.getEntityData().hasKey("RiddenVehicle"))
             entity.getEntityData().removeTag("RiddenVehicle");

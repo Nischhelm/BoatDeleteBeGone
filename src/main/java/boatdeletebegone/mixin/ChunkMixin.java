@@ -24,7 +24,8 @@ public abstract class ChunkMixin {
 
     @Inject(
             method = "addEntity",
-            at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V")
+            at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"),
+            remap = false
     )
     public void additionallyCheckForVehicleChunkPos(Entity entity, CallbackInfo ci) {
         //Runs after check for "entity position in the chunk it was saved in" already failed
@@ -52,10 +53,8 @@ public abstract class ChunkMixin {
 
     @Redirect(
             method = "addEntity",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"
-            )
+            at = @At(value = "INVOKE", target = "Lorg/apache/logging/log4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"),
+            remap = false
     )
     public void noVanillaWarn(Logger instance, String s, Object o1, Object o2, Object o3, Object o4, Object o5)  {
         //No op
