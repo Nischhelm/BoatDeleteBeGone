@@ -1,6 +1,5 @@
 package boatdeletebegone.mixin;
 
-import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.MathHelper;
